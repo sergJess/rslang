@@ -1,0 +1,15 @@
+.nav-inner{
+	display: flex;
+	column-gap: 2rem;
+	padding: 2rem 0;
+}
+.nav-element{
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+	color: #7a0303;
+	letter-spacing: 0.1px;
+	transition: color 0.4s ease-in-out;
+}
+.nav-element:hover {
+	color: #990c99;
+}
