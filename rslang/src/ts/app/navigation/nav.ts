@@ -20,6 +20,11 @@ createNavElement(navText:string, callback : clickCallback){
 	navEl.textContent = navText;
 	navEl.classList.add('nav-element');
 	navEl.onclick = ():void=>{
+		const links = this.navInner.querySelectorAll('.nav-element');
+		links.forEach((item)=>{
+			item.classList.remove('nav-element_active');		
+		});
+		navEl.classList.add('nav-element_active');
 		callback();
 	};
 	this.navInner.append(navEl);
