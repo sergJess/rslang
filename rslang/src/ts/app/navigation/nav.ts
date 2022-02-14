@@ -2,7 +2,6 @@
 import './nav.scss';
 type clickCallback = () => void;
 
-
 export default class Navigation{
 	private parentNode:HTMLElement;
 	private navInner = document.createElement('nav');

@@ -20,7 +20,8 @@ export async function getWords(url:	string): Promise<IgetWords[]>{
 return response.json();
 }
 
-export function make(url:string):void{
-const res = getWords(url);
-res.then((data)=> {return data});
-}
+// export function getWordsArray(url: string): IgetWords[]{
+// const words = getWords(url);
+
+// }
+
