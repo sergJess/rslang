@@ -33,8 +33,7 @@ this.page.classList.add('start-page');
     const footer = new Footer(this.page);
     footer.render();
   }
+clear():void {
+  this.page.remove();
 }
-
-function appNodeController(node:HTMLElement){
-
 }

@@ -1,0 +1,18 @@
+.dictonary-item{
+	padding: 1rem 2rem;
+	border: 2px solid #573d3d;
+	color: #fff;
+}
+.dictonary-inner{
+	display: flex;
+	column-gap: 3rem;
+}
+.dictonary-item-img{
+	display: block;
+}
+.dictonary-text{
+	padding: 1rem 0;
+	font-size: 2.3rem;
+	font-style: italic;
+	color: #b34dc5;
+}
