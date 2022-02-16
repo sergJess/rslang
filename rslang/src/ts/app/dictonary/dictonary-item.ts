@@ -9,7 +9,7 @@ export default class DictonaryItem {
 		this.parent = parentNode;
 		
 	}
-	render(data: IgetWords): void {
+	render(data: IgetWords, imgUrl: string): void {
 const item = document.createElement('div');
 item.classList.add('dictonary-item');
 // word-inner
@@ -21,23 +21,24 @@ word.textContent = `${data.word} - ${data.transcription} - ${data.wordTranslate}
 const img = document.createElement('img');
 img.classList.add('dictonary-item-img');
 img.setAttribute('alt', `${data.word}`);
-img.src = `${data.image}`;
+img.src = `${imgUrl}${data.image}`;
 // text meaning
 const meaningText = document.createElement('p');
 meaningText.classList.add('dictonary-text');
-meaningText.textContent = `${data.textMeaning}`;
+meaningText.innerHTML = `${data.textMeaning}`;
 const meaningTranslate = document.createElement('p');
 meaningTranslate.classList.add('dictonary-text');
 meaningTranslate.textContent = `${data.textMeaningTranslate}`
 // text example
 const exampleText = document.createElement('p');
 exampleText.classList.add('dictonary-text');
-exampleText.textContent = `${data.textExample}`;
+exampleText.innerHTML = `${data.textExample}`;
 const exampleTranslate = document.createElement('p');
 exampleTranslate.classList.add('dictonary-text');
 exampleTranslate.textContent = `${data.textExampleTranslate}`;
 
 wordInner.append(word);
-item.append(wordInner, meaningText, meaningTranslate, exampleText, exampleTranslate);
+item.append(wordInner, img, meaningText, meaningTranslate, exampleText, exampleTranslate);
+this.parent.append(item);
 	}
 }

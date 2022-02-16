@@ -16,7 +16,7 @@ import DictonaryItem from './dictonary-item';
 			data.then((items: IgetWords[])=>{
 				for (let i = 0; i<items.length; i += 1){
 const itemDictonary = new DictonaryItem(this.dictonaryItems);
-itemDictonary.render(items[i]);
+itemDictonary.render(items[i], 'https://raw.githubusercontent.com/sergJess/react-rslang-be/main/');
 				}
 			});
 			this.parent.append(this.dictonaryItems);
