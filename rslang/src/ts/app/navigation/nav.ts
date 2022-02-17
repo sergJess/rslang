@@ -1,6 +1,6 @@
 /* eslint-disable */
 import './nav.scss';
-type clickCallback = () => void;
+import {clickCallback} from '../types/functions';
 
 export default class Navigation{
 	private parentNode:HTMLElement;

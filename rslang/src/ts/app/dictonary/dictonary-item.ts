@@ -16,6 +16,7 @@ item.classList.add('dictonary-item');
 const wordInner = document.createElement('div');
 wordInner.classList.add('dictonary-inner');
 const word = document.createElement('h2');
+word.classList.add('item-title');
 word.textContent = `${data.word} - ${data.transcription} - ${data.wordTranslate}`;
 // img
 const img = document.createElement('img');
@@ -27,14 +28,14 @@ const meaningText = document.createElement('p');
 meaningText.classList.add('dictonary-text');
 meaningText.innerHTML = `${data.textMeaning}`;
 const meaningTranslate = document.createElement('p');
-meaningTranslate.classList.add('dictonary-text');
+meaningTranslate.classList.add('dictonary-text_translate');
 meaningTranslate.textContent = `${data.textMeaningTranslate}`
 // text example
 const exampleText = document.createElement('p');
 exampleText.classList.add('dictonary-text');
 exampleText.innerHTML = `${data.textExample}`;
 const exampleTranslate = document.createElement('p');
-exampleTranslate.classList.add('dictonary-text');
+exampleTranslate.classList.add('dictonary-text_translate');
 exampleTranslate.textContent = `${data.textExampleTranslate}`;
 
 wordInner.append(word);
