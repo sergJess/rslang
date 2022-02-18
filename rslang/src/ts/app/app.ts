@@ -14,10 +14,9 @@ this.parent =	parentNode;
 startingPage.dictonaryOnClick = ()=>{
 	const dictonary =	new Dictonary(this.parent);
 	startingPage.clear();
-	dictonary.clickToHome = ():void => {
+	dictonary.clickToHome = (): void => {
 		dictonary.clear();
-		console.log(dictonary);
-	
+		startingPage.render();
 	}
 	dictonary.render(getWords('https://serg-react-rslang.herokuapp.com/words?page=2&group=0'));
 

@@ -34,6 +34,6 @@ itemDictonary.render(items[i], 'https://raw.githubusercontent.com/sergJess/react
 			this.parent.append(this.dictonaryPage);
 		}
 		clear():void {
-			this.dictonaryPage.remove();
+			this.dictonaryPage.innerHTML = '';
 		}
 	}

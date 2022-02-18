@@ -10,10 +10,11 @@ export default class StartPage {
   toStartPage = ():void => {};
   constructor(parentNode:HTMLElement){
 this.parent = parentNode;
-this.page.classList.add('start-page');
   }
   render(){
-    const nav = new Navigation(this.page); 
+    const pageInner = document.createElement('div');
+    pageInner.classList.add('start-page');
+    const nav = new Navigation(pageInner); 
     nav.createNavElement('Home', this.toStartPage);
     nav.createNavElement('Dictonary', this.dictonaryOnClick);
     nav.createNavElement('Sprint', this.toGameSprint);
@@ -28,12 +29,14 @@ this.page.classList.add('start-page');
     appText.classList.add('app-text');
     appText.textContent = 'Данное приложение позволит вам прожить чуть дольше в этом мире, тк роботы могут разговаривать только на английском или китайском языках... Работы без них не найти. Нет работы => нет денег => нет жизни => Смерть... the end';
     aboutApp.append(appTitle, appText);
-    this.page.append(aboutApp);
-    this.parent.append(this.page);
-    const footer = new Footer(this.page);
+    pageInner.append(aboutApp);
+  
+    const footer = new Footer(pageInner);
     footer.render();
+    this.page.append(pageInner);
+    this.parent.append(this.page);
   }
 clear():void {
-  this.page.remove();
+  this.page.innerHTML = '';
 }
 }
