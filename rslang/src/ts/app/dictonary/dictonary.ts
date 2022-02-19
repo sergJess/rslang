@@ -3,6 +3,7 @@ import './dictonary.scss';
 import {IgetWords} from '../api/api';
 import DictonaryItem from './dictonary-item';
 import Navigation from '../navigation/nav';
+import DictonaryNav from './dictonary-nav';
 import Footer from '../footer/footer';
  export default class Dictonary {
 		parent: HTMLElement;
@@ -10,8 +11,8 @@ import Footer from '../footer/footer';
 		dictonaryNavigation = document.createElement('div');
   dictonaryItems =	document.createElement('div');
 		clickToHome = ():void => {};
-clickToDictonary = ():void => {};
-clickToSprint =	():void => {};
+  clickToDictonary = ():void => {};
+  clickToSprint =	():void => {};
 		constructor(parentNode: HTMLElement){
 			this.parent = parentNode;
 			this.dictonaryNavigation.classList.add('dictonary-navigation');
@@ -24,6 +25,10 @@ clickToSprint =	():void => {};
 			nav.createNavElement('Dictonary', this.clickToDictonary);
 			nav.createNavElement('Sprint', this.clickToSprint);
 			nav.render();
+
+			const navDictonary = new DictonaryNav(this.dictonaryPage);
+			navDictonary.render();
+			navDictonary.setNumber('1');
 			data.then((items: IgetWords[])=>{
 				for (let i = 0; i<items.length; i += 1){
 const itemDictonary = new DictonaryItem(this.dictonaryItems);
@@ -34,6 +39,6 @@ itemDictonary.render(items[i], 'https://raw.githubusercontent.com/sergJess/react
 			this.parent.append(this.dictonaryPage);
 		}
 		clear():void {
-			this.dictonaryPage.innerHTML = '';
+			this.dictonaryPage.remove();
 		}
 	}

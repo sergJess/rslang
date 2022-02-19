@@ -10,6 +10,7 @@ export default class StartPage {
   toStartPage = ():void => {};
   constructor(parentNode:HTMLElement){
 this.parent = parentNode;
+this.page.classList.add('start-page-main');
   }
   render(){
     const pageInner = document.createElement('div');
@@ -38,5 +39,6 @@ this.parent = parentNode;
   }
 clear():void {
   this.page.innerHTML = '';
+  this.page.remove();
 }
 }

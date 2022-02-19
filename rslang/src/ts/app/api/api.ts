@@ -15,8 +15,11 @@ export interface IgetWords{
 	textMeaningTranslate:	string;
 	wordTranslate:	string;
 }
-export async function getWords(url:	string): Promise<IgetWords[]>{
-	const response = await fetch(url);
+export async function getWords(url:	string, page: string, group: string): Promise<IgetWords[]>{
+	const urlLink = new URL(url);
+	urlLink.searchParams.append('page', page);
+	urlLink.searchParams.append('group', group);
+	const response = await fetch(`${urlLink}`);
 return response.json();
 }
 

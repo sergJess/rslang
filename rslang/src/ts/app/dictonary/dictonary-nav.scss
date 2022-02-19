@@ -1,0 +1,22 @@
+.dictionaryonary-nav-inner{
+	display: flex;
+	justify-content: center;
+	column-gap: 2rem;
+	padding: 2rem 1rem;
+}
+.dictonary-nav-button{
+	font-size: 2.4rem;
+	padding: 0.4rem 1.2rem;
+	border: 2px solid #e64858;
+	color: #fff;
+	cursor: pointer;
+}
+.dictonary-nav-text{
+	padding: 0 0.8rem;
+	font-size: 2.5rem;
+	color: rgb(134, 105, 204);
+}
+.dictonary-nav-text_number{
+	display: inline-block;
+	padding-left: 0.6rem;
+}
