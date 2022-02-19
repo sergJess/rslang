@@ -18,10 +18,12 @@ decrementCounter():void{
 	this.counterPage -= 1;
 	this.limitCounter(this.bottomLimit, this.topLimit);
 }
-private limitCounter(bottomLimit:number, topLimit:number):void{
+private limitCounter(bottomLimit:number, topLimit:number):boolean{
 if(this.counterPage < bottomLimit || this.counterPage > topLimit) {
 	this.resetCounter();
+	return false;
 } 
+return true;
 }
 resetCounter():void{
 	this.counterPage = 1;

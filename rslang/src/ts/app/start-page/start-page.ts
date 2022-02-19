@@ -39,6 +39,5 @@ this.page.classList.add('start-page-main');
   }
 clear():void {
   this.page.innerHTML = '';
-  this.page.remove();
 }
 }

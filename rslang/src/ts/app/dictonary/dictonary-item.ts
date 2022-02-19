@@ -3,8 +3,8 @@ import './dictonary-item.scss';
 import {IgetWords} from '../api/api';
 export default class DictonaryItem {
 	parent: HTMLElement;
-	onClickAudioMeaning = ():void=>{};
-	onClickAudioExample = ():void=>{};
+	onClickAudioMeaning = (): void=>{};
+	onClickAudioExample = (): void=>{};
 	constructor(parentNode: HTMLElement){
 		this.parent = parentNode;
 		
