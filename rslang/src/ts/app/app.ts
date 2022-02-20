@@ -1,6 +1,6 @@
 /* eslint-disable */
 import './base.scss';
-import {IgetWords, getWords} from '../app/api/api';
+import {getWords} from '../app/api/api';
 import {WORDS_URL, DATA_RESOURCE } from '../app/constants/constants';
 import StartPage from '../app/start-page/start-page';
 import Dictonary from '../app/dictonary/dictonary';
@@ -21,11 +21,13 @@ startingPage.dictonaryOnClick = ()=>{
 		dictonary.controllerDictonaryNav.decrementCounter();
 		dictonary.clearDictonaryItems();
 		dictonary.renderWords(getWords(WORDS_URL, `${dictonary.controllerDictonaryNav.getCounter()}`, '0'), DATA_RESOURCE);
+		dictonary.navDictonary.setNumber(`${dictonary.controllerDictonaryNav.getCounter() + 1}`);
 	}
 	dictonary.navDictonary.buttonRightOnClick = ():void =>{
 		dictonary.controllerDictonaryNav.incrementCounter();
 		dictonary.clearDictonaryItems();
 		dictonary.renderWords(getWords(WORDS_URL, `${dictonary.controllerDictonaryNav.getCounter()}`, '0'), DATA_RESOURCE);
+		dictonary.navDictonary.setNumber(`${dictonary.controllerDictonaryNav.getCounter() + 1}`);
 	}
 
 	dictonary.clickToHome = (): void => {

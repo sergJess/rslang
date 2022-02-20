@@ -14,9 +14,9 @@ import Footer from '../footer/footer';
 		UrlData: string;
 		controllerDictonaryNav =	new DictonaryNavController(1,30);
 		navDictonary = new DictonaryNav(this.dictonaryPage);
-		clickToHome = ():void => {};
-  clickToDictonary = ():void => {};
-  clickToSprint =	():void => {};
+		clickToHome = (): void => {};
+  clickToDictonary = (): void => {};
+  clickToSprint =	(): void => {};
 		constructor(parentNode: HTMLElement, dataUrl: string){
 			this.parent = parentNode;
 			this.dictonaryNavigation.classList.add('dictonary-navigation');
@@ -33,7 +33,7 @@ import Footer from '../footer/footer';
 			nav.render();
 		
 			this.navDictonary.render();
-			this.navDictonary.setNumber(`${this.controllerDictonaryNav.getCounter()}`);
+			this.navDictonary.setNumber(`${this.controllerDictonaryNav.getCounter() + 1}`);
 			
 		this.renderWords(data, this.UrlData);
 			this.dictonaryPage.append(this.dictonaryItems);
