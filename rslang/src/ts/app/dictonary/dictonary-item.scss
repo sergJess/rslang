@@ -43,6 +43,12 @@ i, b{
 	cursor: pointer;
 	transition: color 0.3s ease-out;
 }
-.dictonary-sound:hover{
+
+.dictonary-sound-2{
+	color: #bfd41a;
+	cursor: pointer;
+	transition: color 0.3s ease-out;
+}
+.dictonary-sound:hover, .dictonary-sound-2:hover{
 	color: #da800a;
 }
