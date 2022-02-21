@@ -23,9 +23,9 @@ export default class DictonaryNav{
 this.infoTextNumber.innerText = content;
 	}
 	render():void {
-		this.buttonLeft.textContent = 'Prev';
+		this.buttonLeft.textContent = 'Предыдущая';
 		this.buttonLeft.classList.add('dictonary-nav-button');
-		this.buttonRight.textContent = 'Next';
+		this.buttonRight.textContent = 'Следующая';
 		this.buttonRight.classList.add('dictonary-nav-button');
 		this.infoText.textContent = 'Страница';
 		this.infoText.classList.add('dictonary-nav-text');

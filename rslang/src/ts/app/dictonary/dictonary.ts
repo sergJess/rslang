@@ -31,9 +31,9 @@ import Footer from '../footer/footer';
 		}
 		render(data: Promise<IgetWords[]>): void {
 			const nav = new Navigation(this.dictonaryPage); 
-			nav.createNavElement('Home', this.clickToHome);
-			nav.createNavElement('Dictonary', this.clickToDictonary);
-			nav.createNavElement('Sprint', this.clickToSprint);
+			nav.createNavElement('Домой', this.clickToHome);
+			nav.createNavElement('Словарь', this.clickToDictonary);
+			// nav.createNavElement('Sprint', this.clickToSprint);
 			nav.render();
 		
 			this.navDictonary.render();

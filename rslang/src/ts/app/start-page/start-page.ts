@@ -16,9 +16,9 @@ this.page.classList.add('start-page-main');
     const pageInner = document.createElement('div');
     pageInner.classList.add('start-page');
     const nav = new Navigation(pageInner); 
-    nav.createNavElement('Home', this.toStartPage);
-    nav.createNavElement('Dictonary', this.dictonaryOnClick);
-    nav.createNavElement('Sprint', this.toGameSprint);
+    nav.createNavElement('Домой', this.toStartPage);
+    nav.createNavElement('Словарь', this.dictonaryOnClick);
+    // nav.createNavElement('Sprint', this.toGameSprint);
     nav.render();
 
     const aboutApp = document.createElement('div');
@@ -28,7 +28,7 @@ this.page.classList.add('start-page-main');
     appTitle.textContent = 'RS-Lang';
     const appText = document.createElement('p');
     appText.classList.add('app-text');
-    appText.textContent = 'Данное приложение позволит вам прожить чуть дольше в этом мире, тк роботы могут разговаривать только на английском или китайском языках... Работы без них не найти. Нет работы => нет денег => нет жизни => Смерть... the end';
+    appText.textContent = 'Приложение для изучения английских слов';
     aboutApp.append(appTitle, appText);
     pageInner.append(aboutApp);
   

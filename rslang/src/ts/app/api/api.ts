@@ -23,8 +23,3 @@ export async function getWords(url:	string, page: string, group: string): Promis
 return response.json();
 }
 
-// export function getWordsArray(url: string): IgetWords[]{
-// const words = getWords(url);
-
-// }
-

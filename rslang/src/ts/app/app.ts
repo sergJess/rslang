@@ -37,7 +37,7 @@ startingPage.dictonaryOnClick = ()=>{
 
 	dictonary.render(getWords(WORDS_URL, '0', '0'));
 
-	console.log('Dictonary')};
+	};
 
 startingPage.render();
 startingPage.toGameSprint = ():void => {console.log('Sprint')};
