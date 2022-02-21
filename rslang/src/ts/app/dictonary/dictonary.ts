@@ -5,6 +5,7 @@ import DictonaryItem from './dictonary-item';
 import Navigation from '../navigation/nav';
 import DictonaryNav from './dictonary-nav';
 import DictonaryNavController from './dictonary-nav-controller';
+import Preloader from '../preloader/preloader';
 import Footer from '../footer/footer';
  export default class Dictonary {
 		parent: HTMLElement;
@@ -12,6 +13,7 @@ import Footer from '../footer/footer';
 		dictonaryNavigation = document.createElement('div');
   dictonaryItems =	document.createElement('div');
 		UrlData: string;
+		preloader: Preloader = new Preloader(this.dictonaryItems);
 		controllerDictonaryNav =	new DictonaryNavController(1,30);
 		navDictonary = new DictonaryNav(this.dictonaryPage);
 		clickToHome = (): void => {};
@@ -23,7 +25,7 @@ import Footer from '../footer/footer';
 			this.dictonaryPage.classList.add('dictonary-page');
 			this.dictonaryItems.classList.add('dictonary-items');
 			this.UrlData = dataUrl;
-			
+		
 		}
 		render(data: Promise<IgetWords[]>): void {
 			const nav = new Navigation(this.dictonaryPage); 
@@ -41,7 +43,9 @@ import Footer from '../footer/footer';
 		}
 
  renderWords(data: Promise<IgetWords[]>, url:string):void{
+	this.preloader.render();
 	data.then((items: IgetWords[])=>{
+		this.preloader.hide();
 		for (let i = 0; i < items.length; i += 1){
 const itemDictonary = new DictonaryItem(this.dictonaryItems);
 itemDictonary.render(items[i], url);
