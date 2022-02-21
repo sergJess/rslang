@@ -6,6 +6,7 @@ import Navigation from '../navigation/nav';
 import DictonaryNav from './dictonary-nav';
 import DictonaryNavController from './dictonary-nav-controller';
 import Preloader from '../preloader/preloader';
+import Player from '../audio-player/player';
 import Footer from '../footer/footer';
  export default class Dictonary {
 		parent: HTMLElement;

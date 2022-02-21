@@ -1,6 +1,7 @@
 /* eslint-disable */
 import './dictonary-item.scss';
 import {IgetWords} from '../api/api';
+import Player from '../audio-player/player';
 export default class DictonaryItem {
 	parent: HTMLElement;
 	onClickAudioMeaning = (): void=>{};
@@ -9,7 +10,7 @@ export default class DictonaryItem {
 		this.parent = parentNode;
 		
 	}
-	render(data: IgetWords, imgUrl: string): void {
+	render(data: IgetWords, imgUrl: string, player?: Player, audioUrl?: string): void {
 const item = document.createElement('div');
 item.classList.add('dictonary-item');
 // word-inner
@@ -18,6 +19,15 @@ wordInner.classList.add('dictonary-inner');
 const word = document.createElement('h2');
 word.classList.add('item-title');
 word.textContent = `${data.word} - ${data.transcription} - ${data.wordTranslate}`;
+//sound
+const sound = document.createElement('p');
+sound.classList.add('dictonary-sound');
+sound.textContent = 'click to listen Word';
+sound.onclick = (): void =>{
+	if(player && audioUrl){
+		player.play(audioUrl);
+	}
+};
 // img
 const img = document.createElement('img');
 img.classList.add('dictonary-item-img');
