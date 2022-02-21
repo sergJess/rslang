@@ -36,7 +36,13 @@ i, b{
 	color: rgb(199, 67, 67);
 }
 .dictonary-sound{
+	display: inline-block;
+	padding: 1rem 0;
 	font-size: 2.4rem;
 	color: #bfd41a;
 	cursor: pointer;
+	transition: color 0.3s ease-out;
+}
+.dictonary-sound:hover{
+	color: #da800a;
 }

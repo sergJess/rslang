@@ -10,7 +10,7 @@ export default class DictonaryItem {
 		this.parent = parentNode;
 		
 	}
-	render(data: IgetWords, imgUrl: string, player?: Player, audioUrl?: string): void {
+	render(data: IgetWords, imgUrl: string, player?: Player): void {
 const item = document.createElement('div');
 item.classList.add('dictonary-item');
 // word-inner
@@ -24,8 +24,8 @@ const sound = document.createElement('p');
 sound.classList.add('dictonary-sound');
 sound.textContent = 'click to listen Word';
 sound.onclick = (): void =>{
-	if(player && audioUrl){
-		player.play(audioUrl);
+	if(player){
+		player.play(`${imgUrl}${data.audio}`);
 	}
 };
 // img
@@ -49,7 +49,7 @@ exampleTranslate.classList.add('dictonary-text_translate');
 exampleTranslate.textContent = `${data.textExampleTranslate}`;
 
 wordInner.append(word);
-item.append(wordInner, img, meaningText, meaningTranslate, exampleText, exampleTranslate);
+item.append(wordInner, sound, img, meaningText, meaningTranslate, exampleText, exampleTranslate);
 this.parent.append(item);
 	}
 }

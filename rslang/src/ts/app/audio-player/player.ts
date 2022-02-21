@@ -5,6 +5,7 @@ export default class Player{
   player = document.createElement('audio');
   constructor(parentNode: HTMLElement){
 this.parent = parentNode;
+this.parent.append(this.player);
   }
   createHidden(): void{
     this.player.classList.add('player', 'player-hidden');

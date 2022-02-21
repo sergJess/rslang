@@ -17,6 +17,7 @@ import Footer from '../footer/footer';
 		preloader: Preloader = new Preloader(this.dictonaryItems);
 		controllerDictonaryNav =	new DictonaryNavController(1,30);
 		navDictonary = new DictonaryNav(this.dictonaryPage);
+		audioPlayer = new Player(this.dictonaryPage);
 		clickToHome = (): void => {};
   clickToDictonary = (): void => {};
   clickToSprint =	(): void => {};
@@ -49,7 +50,7 @@ import Footer from '../footer/footer';
 		this.preloader.hide();
 		for (let i = 0; i < items.length; i += 1){
 const itemDictonary = new DictonaryItem(this.dictonaryItems);
-itemDictonary.render(items[i], url);
+itemDictonary.render(items[i], url, this.audioPlayer);
 		}
 	});
 }
