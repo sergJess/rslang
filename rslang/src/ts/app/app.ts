@@ -4,6 +4,7 @@ import {getWords} from '../app/api/api';
 import {WORDS_URL, DATA_RESOURCE } from '../app/constants/constants';
 import StartPage from '../app/start-page/start-page';
 import Dictonary from '../app/dictonary/dictonary';
+import SprintPage from '../app/sprint/sprint-page';
 export default class App {
 	private parent:HTMLElement;
 	constructor(parentNode:HTMLElement){
@@ -12,7 +13,7 @@ this.parent =	parentNode;
 	start():void{
 		const startingPage = new StartPage(this.parent);
 
-//dictonary onclick
+//dictonary click
 startingPage.dictonaryOnClick = () => {
 	const dictonary =	new Dictonary(this.parent, DATA_RESOURCE);
 	startingPage.clear();
@@ -39,12 +40,18 @@ startingPage.dictonaryOnClick = () => {
 		dictonary.clear();
 		startingPage.render();
 	}
-
+	
 	dictonary.render(getWords(WORDS_URL, '0', '0'));
 
 	};
+// sprint game
+	startingPage.toGameSprint = ():void => {
+		startingPage.clear();
+		const pageSprint = new SprintPage(this.parent);
+		console.log('Sprint')};
 
+	// start
 startingPage.render();
-startingPage.toGameSprint = ():void => {console.log('Sprint')};
+
 	}
 }

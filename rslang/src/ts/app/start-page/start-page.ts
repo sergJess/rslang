@@ -18,7 +18,7 @@ this.page.classList.add('start-page-main');
     const nav = new Navigation(pageInner); 
     nav.createNavElement('Домой', this.toStartPage);
     nav.createNavElement('Словарь', this.dictonaryOnClick);
-    // nav.createNavElement('Sprint', this.toGameSprint);
+    nav.createNavElement('игра Спринт', this.toGameSprint);
     nav.render();
 
     const aboutApp = document.createElement('div');
@@ -37,7 +37,7 @@ this.page.classList.add('start-page-main');
     this.page.append(pageInner);
     this.parent.append(this.page);
   }
-clear():void {
+clear(): void {
   this.page.innerHTML = '';
 }
 }
