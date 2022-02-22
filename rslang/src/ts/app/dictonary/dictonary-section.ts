@@ -7,12 +7,16 @@ export default class DictonarySection{
 	private sectionsAmount:	number;
 	private parent: HTMLElement;
 	public controller = new DictonarySectionController();
+	private currentPart = document.createElement('span');
   public click = ():void => {};
 // callback
 	constructor(parentNode: HTMLElement, sectionsNumber: number){
 this.parent =	parentNode;
 this.partInner.textContent = 'Выберите раздел';
 this.listInner.classList.add('dictonary-list-section');
+this.currentPart.textContent = '- текущий раздел 1';
+this.partInner.append(this.currentPart);
+this.currentPart.classList.add('current-part');
 this.partInner.append(this.listInner);
 this.sectionsAmount = sectionsNumber;
 this.partInner.onclick = (): void => {
@@ -31,6 +35,7 @@ createElement(name:string, num:number): void{
 	const list = document.createElement('li');
 	list.classList.add('dictonary-list');
 	list.onclick = ()=>{
+this.currentPart.textContent = `- текущий раздел ${num + 1}`;
 this.controller.setCounter(num);
 this.click();
 	};
