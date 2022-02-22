@@ -1,12 +1,14 @@
 /* eslint-disable */
 import './dictonary-section.scss';
+
 export default class DictonarySection{
 	private partInner = document.createElement('div');
 	private listInner = document.createElement('ul');
 	private sectionsAmount:	number;
 	private parent: HTMLElement;
 	public controller = new DictonarySectionController();
-	onClick = (): void => {};
+  public click = ():void => {};
+// callback
 	constructor(parentNode: HTMLElement, sectionsNumber: number){
 this.parent =	parentNode;
 this.partInner.textContent = 'Выберите раздел';
@@ -25,12 +27,16 @@ this.listInner.classList.toggle('dictonary-list-section_visible');
 		this.parent.append(this.partInner);
 	}
 createElement(name:string, num:number): void{
+	const wrapper = document.createElement('div');
 	const list = document.createElement('li');
+	list.classList.add('dictonary-list');
 	list.onclick = ()=>{
 this.controller.setCounter(num);
+this.click();
 	};
 	list.textContent = name;
-	this.listInner.append(list);
+	wrapper.append(list);
+	this.listInner.append(wrapper);
 }
 getControllerValue(): number {
 	return this.controller.getCounter();
@@ -39,9 +45,7 @@ getControllerValue(): number {
 
 class DictonarySectionController{
 private counter: number = 0;
-// 	constructor(counterStart: number){
-// this.counter = counterStart;
-// 	}
+
 setCounter(value:number): void{
 this.counter =	value;
 }
