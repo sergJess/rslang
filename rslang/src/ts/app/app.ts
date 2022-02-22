@@ -20,13 +20,13 @@ startingPage.dictonaryOnClick = ()=>{
 	dictonary.navDictonary.buttonLeftOnClick = ():void =>{
 		dictonary.controllerDictonaryNav.decrementCounter();
 		dictonary.clearDictonaryItems();
-		dictonary.renderWords(getWords(WORDS_URL, `${dictonary.controllerDictonaryNav.getCounter()}`, '0'), DATA_RESOURCE);
+		dictonary.renderWords(getWords(WORDS_URL, `${dictonary.controllerDictonaryNav.getCounter()}`, `${dictonary.partSection}`), DATA_RESOURCE);
 		dictonary.navDictonary.setNumber(`${dictonary.controllerDictonaryNav.getCounter() + 1}`);
 	}
 	dictonary.navDictonary.buttonRightOnClick = ():void =>{
 		dictonary.controllerDictonaryNav.incrementCounter();
 		dictonary.clearDictonaryItems();
-		dictonary.renderWords(getWords(WORDS_URL, `${dictonary.controllerDictonaryNav.getCounter()}`, '0'), DATA_RESOURCE);
+		dictonary.renderWords(getWords(WORDS_URL, `${dictonary.controllerDictonaryNav.getCounter()}`, `${dictonary.partSection}`), DATA_RESOURCE);
 		dictonary.navDictonary.setNumber(`${dictonary.controllerDictonaryNav.getCounter() + 1}`);
 	}
 

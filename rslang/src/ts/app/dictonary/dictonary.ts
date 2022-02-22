@@ -7,6 +7,7 @@ import DictonaryNav from './dictonary-nav';
 import DictonaryNavController from './dictonary-nav-controller';
 import Preloader from '../preloader/preloader';
 import Player from '../audio-player/player';
+import DictonarySection from '../dictonary/dictonary-section';
 import Footer from '../footer/footer';
  export default class Dictonary {
 		parent: HTMLElement;
@@ -16,8 +17,11 @@ import Footer from '../footer/footer';
 		UrlData: string;
 		preloader: Preloader = new Preloader(this.dictonaryItems);
 		controllerDictonaryNav =	new DictonaryNavController(1,30);
+		partsDictonary = new DictonarySection(this.dictonaryPage, 10);
 		navDictonary = new DictonaryNav(this.dictonaryPage);
 		audioPlayer = new Player(this.dictonaryPage);
+		public partSection: number = this.partsDictonary.getControllerValue();
+		//events
 		clickToHome = (): void => {};
   clickToDictonary = (): void => {};
   clickToSprint =	(): void => {};
@@ -30,12 +34,13 @@ import Footer from '../footer/footer';
 		
 		}
 		render(data: Promise<IgetWords[]>): void {
+		
 			const nav = new Navigation(this.dictonaryPage); 
 			nav.createNavElement('Домой', this.clickToHome);
 			nav.createNavElement('Словарь', this.clickToDictonary);
 			// nav.createNavElement('Sprint', this.clickToSprint);
 			nav.render();
-		
+			this.partsDictonary.render();
 			this.navDictonary.render();
 			this.navDictonary.setNumber(`${this.controllerDictonaryNav.getCounter() + 1}`);
 			

@@ -8,6 +8,10 @@
 .dictonary-list-section{
 	position: absolute;
 	display: none;
+	min-width: 320px;
+	min-height: 350px;
+	padding: 2rem 3rem;
+	background-color: #005566;
 }
 .dictonary-list-section_visible{
 	display: block;
