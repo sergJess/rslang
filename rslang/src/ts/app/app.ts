@@ -91,3 +91,15 @@ startingPage.render();
 
 	}
 }
+
+class controllerDictonatyPage{
+	private startPage: StartPage;
+
+	constructor( page: StartPage){
+this.startPage = page;
+	}
+	emit(): void{
+
+	}
+
+}
