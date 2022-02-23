@@ -12,8 +12,7 @@ this.parent =	parentNode;
 	}
 	start():void{
 		const startingPage = new StartPage(this.parent);
-
-//dictonary click
+//dictonary page starting
 startingPage.dictonaryOnClick = () => {
 	const dictonary =	new Dictonary(this.parent, DATA_RESOURCE);
 	startingPage.clear();
@@ -22,7 +21,7 @@ startingPage.dictonaryOnClick = () => {
 		dictonary.renderWords(getWords(WORDS_URL, `${dictonary.controllerDictonaryNav.getCounter()}`, `${dictonary.partsDictonary.getControllerValue()}`), DATA_RESOURCE);
 	};
 	//events
-	dictonary.navDictonary.buttonLeftOnClick = ():void =>{
+	dictonary.navDictonary.buttonLeftOnClick = (): void =>{
 		dictonary.controllerDictonaryNav.decrementCounter();
 		dictonary.clearDictonaryItems();
 		dictonary.renderWords(getWords(WORDS_URL, `${dictonary.controllerDictonaryNav.getCounter()}`, `${dictonary.partsDictonary.getControllerValue()}`), DATA_RESOURCE);
@@ -44,7 +43,7 @@ startingPage.dictonaryOnClick = () => {
 	dictonary.render(getWords(WORDS_URL, '0', '0'));
 
 	};
-// sprint game
+// sprint game starting
 	startingPage.toGameSprint = ():void => {
 		startingPage.clear();
 		const pageSprint = new SprintPage(this.parent);
