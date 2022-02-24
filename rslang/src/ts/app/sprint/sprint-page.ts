@@ -1,10 +1,13 @@
 /* eslint-disable */
 import './sprint-page.scss';
 import Navigation from '../navigation/nav';
+import Timer from '../timer/timer';
 export default class SprintPage{
 	private parent: HTMLElement;
 	private pageSprint = document.createElement('div');
 	private gameFieldInner = document.createElement('div');
+	private timer = new Timer(this.gameFieldInner, 60);
+	//events
 	clickToHome = ():	void => {};
  clickToDictonary = (): void => {};
 	constructor(parentNode: HTMLElement){
@@ -17,6 +20,7 @@ this.parent.append(this.pageSprint);
 			nav.createNavElement('Домой', this.clickToHome);
 			nav.createNavElement('Словарь', this.clickToDictonary);
 			nav.render();
+			this.timer.render();
 			this.pageSprint.append(this.gameFieldInner);
 	}
 	clear(): void{
