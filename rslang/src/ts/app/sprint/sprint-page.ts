@@ -6,7 +6,7 @@ export default class SprintPage{
 	private parent: HTMLElement;
 	private pageSprint = document.createElement('div');
 	private gameFieldInner = document.createElement('div');
-	private timer = new Timer(this.gameFieldInner, 60);
+	private timer = new Timer(this.gameFieldInner, 3);
 	//events
 	clickToHome = ():	void => {};
  clickToDictonary = (): void => {};
@@ -21,6 +21,7 @@ this.parent.append(this.pageSprint);
 			nav.createNavElement('Словарь', this.clickToDictonary);
 			nav.render();
 			this.timer.render();
+			this.timer.start();
 			this.pageSprint.append(this.gameFieldInner);
 	}
 	clear(): void{
