@@ -15,16 +15,16 @@ this.timer.append(this.digitalDisplay);
 let counter = this.time;
 const step = 1;
 
-let x = ():void=>{
+const tick = ():void=>{
 	counter -= step;
 this.digitalDisplay.textContent = `${counter}`;
 
-this.timerUpdate = setTimeout(x, 1000);
+this.timerUpdate = setTimeout(tick, 1000);
 if(counter === 0){
 	this.stop();
 }
 };
-this.timerUpdate = setTimeout(x, 1000);
+this.timerUpdate = setTimeout(tick, 1000);
 
 	}
 
