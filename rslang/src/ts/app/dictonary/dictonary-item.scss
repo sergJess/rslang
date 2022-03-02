@@ -1,0 +1,54 @@
+.dictonary-item{
+	padding: 1rem 2rem;
+	border: 2px solid #573d3d;
+	color: #fff;
+}
+.dictonary-inner{
+	display: flex;
+	column-gap: 3rem;
+}
+.item-title{
+	padding: 1rem 0;
+	font-size: 3rem;
+	font-style: italic;
+	color: #4ac4d4;
+}
+.dictonary-item-img{
+	max-width: 368px;
+	min-height: 268px;
+	display: block;
+	border: 4px solid #fff;
+	border-radius: 5px;
+}
+.dictonary-text{
+	padding: 1rem 0;
+	font-size: 2.5rem;
+	font-style: italic;
+	color: #b34dc5;
+}
+.dictonary-text_translate{
+	padding: 1rem 0;
+	font-size: 2.5rem;
+	font-style: italic;
+	color: #aeda5c;
+}
+i, b{
+	color: rgb(199, 67, 67);
+}
+.dictonary-sound{
+	display: inline-block;
+	padding: 1rem 0;
+	font-size: 2.4rem;
+	color: #bfd41a;
+	cursor: pointer;
+	transition: color 0.3s ease-out;
+}
+
+.dictonary-sound-2{
+	color: #bfd41a;
+	cursor: pointer;
+	transition: color 0.3s ease-out;
+}
+.dictonary-sound:hover, .dictonary-sound-2:hover{
+	color: #da800a;
+}

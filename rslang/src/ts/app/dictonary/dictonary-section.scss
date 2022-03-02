@@ -1,0 +1,40 @@
+.dictonary-section{
+	position: relative;
+	display: inline-block;
+	font-size: 2.4rem;
+	color: #a511aa;
+	padding: 0.4rem 1rem;
+	transition: color 0.3s ease;
+	cursor: pointer;
+}
+.dictonary-section:hover{
+	color: #ca1f61;
+}
+.dictonary-list-section{
+	position: absolute;
+	top: 130%;
+	display: none;
+	min-width: 320px;
+	border-radius: 12px;
+	padding: 2rem 3rem;
+
+	background-color: rgba(94, 16, 117, 0.9);
+}
+.dictonary-list{
+	display: inline-block;
+	color: #23cc48;
+	transition: color 0.3s ease;
+	cursor: pointer;
+}
+.dictonary-list:hover{
+	color: #d6203e;
+}
+.dictonary-list-section_visible{
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+}
+.current-part{
+	display: inline-block;
+	margin-left: 1rem;
+}
